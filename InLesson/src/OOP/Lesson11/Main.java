@@ -9,7 +9,7 @@ public class Main {
     static void main() {
 
         Rectangle rectangle = new Rectangle(2,6);
-        ColorRect colorRect = new ColorRect(2,6);
+//        ColorRect colorRect = new ColorRect(2,6);
         Triangle triangle = new Triangle(3,3,4);
 
         ArrayList<Shape> figures = new ArrayList<>();
