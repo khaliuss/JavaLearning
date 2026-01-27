@@ -2,17 +2,17 @@ package OOP.Lesson5_6;
 
 public class Box {
 
-    double length;
-    double width;
-    double height;
+    private double length;
+    private double width;
+    private double height;
 
-    Box(double length, double width, double height) {
+    public Box(double length, double width, double height) {
         this.length = length;
         this.width = width;
         this.height = height;
     }
 
-    Box() {
+    public Box() {
         this.length = 0;
         this.width = 0;
         this.height = 0;
@@ -24,8 +24,8 @@ public class Box {
 
 
 
-    String inform() {
-        return length+" "+width+" "+height;
+    public void showInfo() {
+        System.out.print( "Length: "+length+" Width: "+width+" Height: "+height+" ");
     }
 
 }

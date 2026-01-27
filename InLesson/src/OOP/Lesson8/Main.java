@@ -60,6 +60,12 @@ public class Main {
         list.add("11");
         list.add("12");
 
+        for (int i = 0; i < list.getSize(); i++) {
+            System.out.print(list.get(i));
+        }
+
+        System.out.println();
+
         System.out.println(list);
 
         list.removeAt(2);

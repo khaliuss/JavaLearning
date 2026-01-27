@@ -4,6 +4,7 @@ public class Rect {
     double length;
     double width;
 
+
     void setDimens(int length,int width){
         this.length = length;
         this.width = width;
