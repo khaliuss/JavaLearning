@@ -1,38 +1,38 @@
 package org.example;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-class CalculatorTest {
+import static org.junit.Assert.*;
+
+public class CalculatorTest {
 
     private Calculator calculator;
 
 
-    @BeforeEach
+    @Before
     public void setUp(){
         calculator = new Calculator();
     }
 
     @Test
-    void when10AddTo5ThenResult15() {
+    public  void when10AddTo5ThenResult15() {
         int exp = 15;
         int result = calculator.add(10,5);
         assertEquals(exp,result);
     }
 
     @Test
-    void when20AddTo5ThenResult25(){
+    public void when20AddTo5ThenResult25(){
         int exp2 = 25;
         int result2 = calculator.add(20,5);
         assertEquals(exp2,result2);
     }
 
     @Test
-    void whenIncorrectStringAddThenTrowError(){
+    public void whenIncorrectStringAddThenTrowError(){
         boolean incorrect = false;
         try {
             calculator.add("asdaf","3");
@@ -44,35 +44,35 @@ class CalculatorTest {
 
 
     @Test
-    void when20MinusTo10ThenResult10() {
+    public void when20MinusTo10ThenResult10() {
         double exp = 10;
         double res = calculator.min(20.0,10.0);
-        assertEquals(exp,res);
+        assertEquals(exp,res,000.7);
     }
 
     @Test
-    void whenIncorrectStringMinusThenTrowError(){
+    public void whenIncorrectStringMinusThenTrowError(){
         assertThrows(Exception.class, () -> {
             calculator.min("as", "1.2");
         });
     }
 
     @Test
-    void mul() {
+    public void mul() {
         double exp = 10;
         double res = calculator.mul(5.0,2.0);
-        assertEquals(exp,res);
+        assertEquals(exp,res,000.7);
     }
 
     @Test
-    void div() {
+    public void div() {
         double exp = 2;
         double res = calculator.div(20.0,10.0);
-        assertEquals(exp,res);
+        assertEquals(exp,res,000.7);
     }
 
-    @AfterEach
-    public void  clous(){
+    @After
+    public  void  clous(){
         calculator = null;
     }
 }
