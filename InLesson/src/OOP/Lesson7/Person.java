@@ -38,4 +38,9 @@ public class Person {
                 ", height=" + height +
                 '}';
     }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s Age: %s Height: %s",name,age,height);
+    }
 }
