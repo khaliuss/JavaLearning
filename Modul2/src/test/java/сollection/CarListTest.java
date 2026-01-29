@@ -12,7 +12,7 @@ public class CarListTest {
 
     @Before
     public void setUp() {
-        carList = new CarArrayList();
+        carList = new LinkedCarList();
         for (int i = 0; i < 100; i++) {
             carList.add(new Car("Brand " + i, i));
         }

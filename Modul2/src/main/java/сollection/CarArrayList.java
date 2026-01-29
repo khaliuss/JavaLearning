@@ -2,10 +2,11 @@ package сollection;
 
 import java.util.Arrays;
 
-public class CarArrayList implements CarList {
+public class CarArrayList implements CarList{
 
     private Car[] array = new Car[10];
     private int size = 0;
+
 
 
     @Override
@@ -16,7 +17,7 @@ public class CarArrayList implements CarList {
 
     @Override
     public void add(Car car) {
-        updateSizeOfArray();
+       updateSizeOfArray();
         array[size] = car;
         size++;
     }
@@ -24,9 +25,13 @@ public class CarArrayList implements CarList {
     @Override
     public void add(Car car, int index) {
         updateSizeOfArray();
-        for (int i = size; i > index; i--) {
-            array[i] = array[i - 1];
+        /*for (int i = size; i > index; i--) {
+                array[i] = array[i-1];
+        }*/
+        if (index<0 || index > size){
+            throw new IndexOutOfBoundsException();
         }
+        System.arraycopy(array,index,array,index+1,size-index);
         array[index] = car;
         size++;
     }
@@ -45,9 +50,9 @@ public class CarArrayList implements CarList {
     }*/
 
     @Override
-    public boolean remove(Car car) {
+    public boolean remove(Car car){
         for (int i = 0; i < size; i++) {
-            if (array[i].equals(car)) {
+            if (array[i].equals(car)){
                 return removeAt(i);
             }
         }
@@ -57,9 +62,12 @@ public class CarArrayList implements CarList {
     @Override
     public boolean removeAt(int index) {
         checkIndex(index);
-        for (int i = index; i < size - 1; i++) {
-            array[i] = array[i + 1];
-        }
+        /*for (int i = index; i < size-1; i++) {
+            array[i] = array[i+1];
+        }*/
+
+        System.arraycopy(array,index,array,index-1,size-index);
+
         size--;
         return true;
     }
@@ -75,20 +83,20 @@ public class CarArrayList implements CarList {
         array = new Car[10];
     }
 
-    private void checkIndex(int index) {
-        if (index < 0 || index >= size) {
+    private void checkIndex(int index){
+        if (index<0 || index>=size){
             throw new IndexOutOfBoundsException();
         }
     }
 
-    private void updateSizeOfArray() {
-        if (size >= array.length) {
+    private void updateSizeOfArray(){
+        if (size >= array.length){
             /*Car[] newArray = new Car[array.length*2];
             for (int a = 0; a < array.length; a++) {
                 newArray[a] = array[a];
             }
             array = newArray;*/
-            array = Arrays.copyOf(array, array.length * 2);
+            array = Arrays.copyOf(array,array.length*2);
         }
     }
 
