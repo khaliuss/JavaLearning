@@ -1,5 +1,7 @@
 package сollection;
 
+import java.util.Objects;
+
 public class Car {
 
     private String brand;
@@ -17,4 +19,21 @@ public class Car {
     public int getNumber() {
         return number;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand,number);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;
+
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Car car = (Car) obj;
+
+        return number == car.number && Objects.equals(brand,car.brand);
+    }
+
 }
