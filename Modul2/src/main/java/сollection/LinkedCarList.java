@@ -1,5 +1,9 @@
 package сollection;
 
+import сollection.interfaces.CarList;
+
+import java.util.Iterator;
+
 public class LinkedCarList implements CarList {
 
     Node first;
@@ -13,7 +17,7 @@ public class LinkedCarList implements CarList {
     }
 
     @Override
-    public void add(Car car) {
+    public boolean add(Car car) {
         if (size == 0) {
             first = new Node(null, car, null);
             last = first;
@@ -23,40 +27,41 @@ public class LinkedCarList implements CarList {
             secondLast.next = last;
         }
         size++;
+        return true;
     }
 
     @Override
-    public void add(Car car, int index) {
+    public boolean add(Car car, int index) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
         }
-        if (index==size){
-            add(car);
-            return;
+        if (index == size) {
+
+            return add(car);
+
         }
         Node nodeNext = getNode(index);
         Node nodePrevious = nodeNext.previous;
         Node newNode = new Node(nodePrevious, car, nodeNext);
         nodeNext.previous = newNode;
-        if (nodePrevious != null){
+        if (nodePrevious != null) {
             nodePrevious.next = newNode;
-        }else{
+        } else {
             first = newNode;
         }
 
         size++;
+        return true;
     }
 
     @Override
     public boolean remove(Car car) {
-        Node node = first;
-        for (int i = 0; i < size; i++) {
-            if (node.car.equals(car)){
-                return removeAt(i);
-            }
-            node = node.next;
+        int index = findElement(car);
+        if (index != -1){
+            return removeAt(index);
+        }else {
+            return false;
         }
-        return false;
     }
 
     @Override
@@ -65,16 +70,16 @@ public class LinkedCarList implements CarList {
         Node node = getNode(index);
         Node nodeNext = node.next;
         Node nodePrevious = node.previous;
-        if (nodeNext != null){
+        if (nodeNext != null) {
             nodeNext.previous = nodePrevious;
-        }else{
+        } else {
             last = nodePrevious;
         }
 
 
-        if (nodePrevious != null){
+        if (nodePrevious != null) {
             nodePrevious.next = nodeNext;
-        }else {
+        } else {
             first = nodeNext;
         }
 
@@ -94,7 +99,23 @@ public class LinkedCarList implements CarList {
         size = 0;
     }
 
-    private Node getNode(int index){
+    @Override
+    public boolean contains(Car car) {
+        return findElement(car) != -1;
+    }
+
+    private int findElement(Car car) {
+        Node node = first;
+        for (int i = 0; i < size; i++) {
+            if (node.car.equals(car)) {
+                return i;
+            }
+            node = node.next;
+        }
+        return -1;
+    }
+
+    private Node getNode(int index) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
         }
@@ -103,6 +124,26 @@ public class LinkedCarList implements CarList {
             node = node.next;
         }
         return node;
+    }
+
+    @Override
+    public Iterator<Car> iterator() {
+        return new Iterator<Car>() {
+
+            Node node = first;
+
+            @Override
+            public boolean hasNext() {
+                return node != null;
+            }
+
+            @Override
+            public Car next() {
+                Car car = node.car;
+                node = node.next;
+                return car;
+            }
+        };
     }
 
     private static class Node {
@@ -117,8 +158,8 @@ public class LinkedCarList implements CarList {
         }
     }
 
-    private void checkIndex(int index){
-        if (index<0 || index>=size){
+    private void checkIndex(int index) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
     }

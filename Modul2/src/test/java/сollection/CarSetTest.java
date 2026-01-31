@@ -2,13 +2,13 @@ package сollection;
 
 import org.junit.Before;
 import org.junit.Test;
+import сollection.interfaces.CarSet;
 
 import static org.junit.Assert.*;
 
 public class CarSetTest {
 
     private CarSet carSet;
-    private Car car;
 
 
     @Before
@@ -52,5 +52,12 @@ public class CarSetTest {
     public void whenSetClearThenSize0() {
         carSet.clear();
         assertEquals(0, carSet.size());
+    }
+
+    @Test
+    public void whenCollectionContainsElementThenReturnTrue() {
+        assertTrue(carSet.contains(new Car("Brand 1",1)));
+        assertFalse(carSet.contains(new Car("Brand 1001",1123)));
+
     }
 }

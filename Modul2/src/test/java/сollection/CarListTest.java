@@ -2,6 +2,7 @@ package сollection;
 
 import org.junit.Before;
 import org.junit.Test;
+import сollection.interfaces.CarList;
 
 import static org.junit.Assert.*;
 
@@ -85,5 +86,15 @@ public class CarListTest {
         carList.add(car,100);
         Car carFromList = carList.get(100);
         assertEquals(car,carFromList);
+    }
+
+    @Test
+    public void whenCollectionContainsElementThenReturnTrue() {
+        assertTrue(carList.contains(new Car("Brand 1",1)));
+    }
+
+    @Test
+    public void whenCollectionContainsElementThenReturnFalse() {
+        assertFalse(carList.contains(new Car("Brand 100012",1123)));
     }
 }

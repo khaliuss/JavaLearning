@@ -1,9 +1,11 @@
 package сollection;
 
+import сollection.interfaces.CarCollection;
+
 public class Main {
 
     static void main() {
-        CarArrayList carArrayList = new CarArrayList();
+       /* CarArrayList carArrayList = new CarArrayList();
         carArrayList.add(new Car("Car 1",1));
         carArrayList.add(new Car("Car 2",2));
         carArrayList.add(new Car("Car 3",3));
@@ -25,10 +27,17 @@ public class Main {
         System.out.println("The car is -> "+carArrayList.get(5).getBrand());
         System.out.println("The car is -> "+carArrayList.get(6).getBrand());
         System.out.println("The car is -> "+carArrayList.get(7).getBrand());
-        System.out.println("The car is -> "+carArrayList.get(8).getBrand());
+        System.out.println("The car is -> "+carArrayList.get(8).getBrand());*/
 
 
+        CarCollection cars = new CarHashSet();
+        for (int i = 0; i < 10; i++) {
+            cars.add(new Car("Brand "+i,i));
+        }
 
+        for (Car car : cars){
+            System.out.println(car.getBrand() + " " + car.getNumber());
+        }
     }
 
 

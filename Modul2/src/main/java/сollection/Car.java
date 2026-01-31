@@ -21,19 +21,25 @@ public class Car {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(brand,number);
+    public boolean equals(Object o) {
+        if(this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return number == car.number && Objects.equals(brand, car.brand);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-
-        if (obj == null || getClass() != obj.getClass()) return false;
-
-        Car car = (Car) obj;
-
-        return number == car.number && Objects.equals(brand,car.brand);
+    public int hashCode() {
+        return Objects.hash(brand, number);
     }
 
+
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", number=" + number +
+                '}';
+    }
 }

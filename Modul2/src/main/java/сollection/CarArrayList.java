@@ -1,8 +1,11 @@
 package сollection;
 
-import java.util.Arrays;
+import сollection.interfaces.CarList;
 
-public class CarArrayList implements CarList{
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class CarArrayList implements CarList {
 
     private Car[] array = new Car[10];
     private int size = 0;
@@ -16,14 +19,15 @@ public class CarArrayList implements CarList{
     }
 
     @Override
-    public void add(Car car) {
+    public boolean add(Car car) {
        updateSizeOfArray();
         array[size] = car;
         size++;
+        return true;
     }
 
     @Override
-    public void add(Car car, int index) {
+    public boolean add(Car car, int index) {
         updateSizeOfArray();
         /*for (int i = size; i > index; i--) {
                 array[i] = array[i-1];
@@ -34,6 +38,7 @@ public class CarArrayList implements CarList{
         System.arraycopy(array,index,array,index+1,size-index);
         array[index] = car;
         size++;
+        return true;
     }
 
     /*@Override
@@ -83,6 +88,16 @@ public class CarArrayList implements CarList{
         array = new Car[10];
     }
 
+    @Override
+    public boolean contains(Car car) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(car)){
+                return removeAt(i);
+            }
+        }
+        return false;
+    }
+
     private void checkIndex(int index){
         if (index<0 || index>=size){
             throw new IndexOutOfBoundsException();
@@ -100,4 +115,24 @@ public class CarArrayList implements CarList{
         }
     }
 
+    @Override
+    public Iterator<Car> iterator() {
+
+        return new Iterator<Car>() {
+
+            int index = 0;
+
+            @Override
+            public boolean hasNext() {
+                return index<size;
+            }
+
+            @Override
+            public Car next() {
+                Car car = array[index];
+                index++;
+                return car;
+            }
+        };
+    }
 }
