@@ -2,7 +2,7 @@ package сollection.set;
 
 
 import сollection.classes.Car;
-import сollection.interfaces.CarSet;
+import interfaces.CarSet;
 
 import java.util.Iterator;
 

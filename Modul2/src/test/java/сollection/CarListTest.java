@@ -3,7 +3,7 @@ package сollection;
 import org.junit.Before;
 import org.junit.Test;
 import сollection.classes.Car;
-import сollection.interfaces.CarList;
+import interfaces.CarList;
 import сollection.list.LinkedCarList;
 
 import static org.junit.Assert.*;

@@ -1,11 +1,12 @@
 package сollection.list;
 
+import interfaces.CarQueue;
 import сollection.classes.Car;
-import сollection.interfaces.CarList;
+import interfaces.CarList;
 
 import java.util.Iterator;
 
-public class LinkedCarList implements CarList {
+public class LinkedCarList implements CarList, CarQueue {
 
     Node first;
     Node last;
@@ -29,6 +30,19 @@ public class LinkedCarList implements CarList {
         }
         size++;
         return true;
+    }
+
+    @Override
+    public Car peek() {
+        return size>0 ? get(0) : null;
+    }
+
+    @Override
+    public Car poll() {
+
+        Car car = get(0);
+        removeAt(0);
+        return car;
     }
 
     @Override

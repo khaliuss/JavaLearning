@@ -1,7 +1,7 @@
 package сollection;
 
 import сollection.classes.Car;
-import сollection.interfaces.CarCollection;
+import interfaces.CarCollection;
 import сollection.set.CarHashSet;
 
 public class Main {

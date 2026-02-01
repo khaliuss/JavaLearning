@@ -1,8 +1,8 @@
-package сollection.map;
+package map;
 
 import сollection.classes.Car;
 import сollection.classes.CarOwner;
-import сollection.interfaces.CarMap;
+import interfaces.CarMap;
 
 import java.util.ArrayList;
 import java.util.HashSet;

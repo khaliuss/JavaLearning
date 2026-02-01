@@ -1,4 +1,4 @@
-package сollection.interfaces;
+package interfaces;
 
 import сollection.classes.Car;
 

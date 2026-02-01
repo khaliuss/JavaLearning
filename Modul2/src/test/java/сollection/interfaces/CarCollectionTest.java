@@ -1,5 +1,6 @@
 package сollection.interfaces;
 
+import interfaces.CarCollection;
 import org.junit.Before;
 import org.junit.Test;
 import сollection.classes.Car;
