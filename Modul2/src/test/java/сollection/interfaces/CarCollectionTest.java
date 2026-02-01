@@ -2,10 +2,8 @@ package сollection.interfaces;
 
 import org.junit.Before;
 import org.junit.Test;
-import сollection.Car;
-import сollection.CarArrayList;
-import сollection.CarHashSet;
-import сollection.LinkedCarList;
+import сollection.classes.Car;
+import сollection.list.LinkedCarList;
 
 import static org.junit.Assert.*;
 

@@ -1,5 +1,6 @@
-package сollection;
+package сollection.list;
 
+import сollection.classes.Car;
 import сollection.interfaces.CarList;
 
 import java.util.Iterator;

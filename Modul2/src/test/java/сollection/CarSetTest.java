@@ -2,7 +2,9 @@ package сollection;
 
 import org.junit.Before;
 import org.junit.Test;
+import сollection.classes.Car;
 import сollection.interfaces.CarSet;
+import сollection.set.CarHashSet;
 
 import static org.junit.Assert.*;
 

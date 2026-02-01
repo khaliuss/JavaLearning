@@ -1,12 +1,12 @@
-package сollection.treeset;
+package сollection.set;
 
-import сollection.Car;
+import сollection.classes.Car;
 
 import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Main {
+public class TreeSetMain {
 
     static void main() {
         Set<Car> cars = new TreeSet<>(new Comparator<Car>() {

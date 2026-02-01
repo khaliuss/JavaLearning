@@ -1,4 +1,4 @@
-package сollection;
+package сollection.classes;
 
 import java.util.Objects;
 

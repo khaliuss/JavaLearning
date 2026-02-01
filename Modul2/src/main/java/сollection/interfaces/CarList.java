@@ -1,6 +1,6 @@
 package сollection.interfaces;
 
-import сollection.Car;
+import сollection.classes.Car;
 
 public interface CarList extends CarCollection{
     Car get(int index);
