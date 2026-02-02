@@ -1,7 +1,7 @@
-package сollection.list;
+package lesson.сollection.list;
 
-import сollection.classes.Car;
-import interfaces.CarList;
+import lesson.сollection.classes.Car;
+import lesson.interfaces.CarList;
 
 import java.util.Arrays;
 import java.util.Iterator;

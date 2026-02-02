@@ -1,8 +1,8 @@
-package сollection;
+package lesson.сollection;
 
-import сollection.classes.Car;
-import interfaces.CarCollection;
-import сollection.set.CarHashSet;
+import lesson.сollection.classes.Car;
+import lesson.interfaces.CarCollection;
+import lesson.сollection.set.CarHashSet;
 
 public class Main {
 

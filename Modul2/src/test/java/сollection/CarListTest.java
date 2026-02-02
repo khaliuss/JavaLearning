@@ -2,9 +2,9 @@ package сollection;
 
 import org.junit.Before;
 import org.junit.Test;
-import сollection.classes.Car;
-import interfaces.CarList;
-import сollection.list.LinkedCarList;
+import lesson.сollection.classes.Car;
+import lesson.interfaces.CarList;
+import lesson.сollection.list.LinkedCarList;
 
 import static org.junit.Assert.*;
 

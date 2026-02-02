@@ -1,7 +1,7 @@
-package interfaces;
+package lesson.interfaces;
 
-import сollection.classes.Car;
-import сollection.classes.CarOwner;
+import lesson.сollection.classes.Car;
+import lesson.сollection.classes.CarOwner;
 
 import java.util.List;
 import java.util.Set;

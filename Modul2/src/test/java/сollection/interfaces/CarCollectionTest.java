@@ -1,10 +1,10 @@
 package сollection.interfaces;
 
-import interfaces.CarCollection;
+import lesson.interfaces.CarCollection;
 import org.junit.Before;
 import org.junit.Test;
-import сollection.classes.Car;
-import сollection.list.LinkedCarList;
+import lesson.сollection.classes.Car;
+import lesson.сollection.list.LinkedCarList;
 
 import static org.junit.Assert.*;
 

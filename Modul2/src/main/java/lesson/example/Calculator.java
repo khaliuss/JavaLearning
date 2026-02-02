@@ -1,4 +1,4 @@
-package org.example;
+package lesson.example;
 
 public class Calculator {
     public int add(int a,int b){

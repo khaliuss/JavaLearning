@@ -1,11 +1,11 @@
 package сollection.map;
 
-import map.CarHashMap;
+import lesson.map.CarHashMap;
 import org.junit.Before;
 import org.junit.Test;
-import сollection.classes.Car;
-import сollection.classes.CarOwner;
-import interfaces.CarMap;
+import lesson.сollection.classes.Car;
+import lesson.сollection.classes.CarOwner;
+import lesson.interfaces.CarMap;
 
 import static org.junit.Assert.*;
 

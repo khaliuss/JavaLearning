@@ -1,4 +1,4 @@
-package сollection.classes;
+package lesson.сollection.classes;
 
 import java.util.Objects;
 

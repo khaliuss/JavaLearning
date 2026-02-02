@@ -1,8 +1,8 @@
-package сollection.set;
+package lesson.сollection.set;
 
 
-import сollection.classes.Car;
-import interfaces.CarSet;
+import lesson.сollection.classes.Car;
+import lesson.interfaces.CarSet;
 
 import java.util.Iterator;
 

@@ -1,6 +1,6 @@
-package сollection.set;
+package lesson.сollection.set;
 
-import сollection.classes.Car;
+import lesson.сollection.classes.Car;
 
 import java.util.Comparator;
 import java.util.Set;

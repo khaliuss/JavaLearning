@@ -1,9 +1,10 @@
 package interfaces;
 
+import lesson.interfaces.CarQueue;
 import org.junit.Before;
 import org.junit.Test;
-import сollection.classes.Car;
-import сollection.list.LinkedCarList;
+import lesson.сollection.classes.Car;
+import lesson.сollection.list.LinkedCarList;
 
 import static org.junit.Assert.*;
 

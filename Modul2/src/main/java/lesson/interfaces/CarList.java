@@ -1,6 +1,6 @@
-package interfaces;
+package lesson.interfaces;
 
-import сollection.classes.Car;
+import lesson.сollection.classes.Car;
 
 public interface CarList extends CarCollection{
     Car get(int index);
