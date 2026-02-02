@@ -1,26 +1,57 @@
+import java.io.Serializable;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
 
-public class Box<S,I,F> {
-    private S   value1;
-    private I   value2;
-    private F   value3;
+public class Box<T extends Number & Comparable<T> & Serializable> {
+    private T[]   array;
 
-    public Box(S value1,I value2,F value3) {
-        this.value1 = value1;
-        this.value2 = value2;
-        this.value3 = value3;
+
+    public Box(T... array) {
+        this.array = array;
     }
 
-    public S getValue1() {
-        return value1;
+    public double avg(){
+        double result = 0;
+        for (T elemnt : array){
+            result += elemnt.doubleValue();
+        }
+        return result/array.length;
     }
 
-    public I getValue2() {
-        return value2;
+    public int compare(Box<?> box){
+        if (this.avg() == box.avg()){
+            return 0;
+        }else if (this.avg() > box.avg()){
+            return 1;
+        } else{
+            return -1;
+        }
     }
 
-    public F getValue3() {
-        return value3;
+   /* public static void method1(List<Number> numbers){
+
+    }*/
+
+    public static void method2(List<? extends Number> numbers){
+
     }
 
+
+    public static <U> U getFirstElement(List<U> list){
+        return list.get(0);
+    }
+
+    public static <U> void transfer(List<? extends U> src,List<? super U> dist){
+        dist.addAll(src);
+        src.clear();
+    }
+
+    public T[] getArray() {
+        return array;
+    }
+
+    public void setArray(T[] array) {
+        this.array = array;
+    }
 }
