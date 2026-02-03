@@ -1,3 +1,5 @@
+package lesson1;
+
 public class MyThreadMethod1 extends Thread{
 
     @Override

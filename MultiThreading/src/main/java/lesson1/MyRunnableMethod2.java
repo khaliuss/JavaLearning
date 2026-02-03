@@ -1,3 +1,5 @@
+package lesson1;
+
 public class MyRunnableMethod2 implements Runnable {
     @Override
     public void run() {
